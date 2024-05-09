@@ -1,0 +1,40 @@
+<!-- Create a block so it can be used in the base.html file -->
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Center the div -->
+<div class="col-md-6 offset-md-3">
+
+    <!-- If user is logged in give access to this info-->
+    {% if user.is_authenticated %}
+        <h1>User authenticated</h1>
+
+    <!-- Else the user needs to login -->
+    {% else %}
+    
+    <h1>Login</h1>
+    <br/>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %} <!--Added so hackers dont get in-->
+
+        <form>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" name="username" placeholder="John213" required>
+              <div id="help" class="form-text">We'll never share your info with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-secondary">Login</button>
+          </form>
+
+
+
+    </form>
+</div>
+
+{% endif %}
+
+{% endblock %}

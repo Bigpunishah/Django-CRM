@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+#Create the same urls.py within the wesbite dir
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include #Add the include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('website.urls')), #Add this so the website urls are accessible
 ]

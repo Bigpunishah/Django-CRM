@@ -12,3 +12,5 @@ cursorObject = database.cursor()
 
 #Create the DB
 cursorObject.execute("CREATE DATABASE crmDB")
+
+print("If the DB was created you will see this message!")
