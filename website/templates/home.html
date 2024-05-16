@@ -35,7 +35,7 @@
             <td>{{ record.state }}</td>
             <td>{{ record.zipcode }}</td>
             <td>{{ record.created_at }}</td>
-            <td><a href="{% url 'home' %}" class="btn btn-primary">Update Link</a></td>
+            <td><a href="{% url 'record' record.id %}" class="btn btn-primary">Select</a></td>
         </tr>
         
           {% endfor %}
