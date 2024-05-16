@@ -7,4 +7,5 @@ urlpatterns = [
     path('login/', views.login_user, name='login'), #Use this login/ path for another page.
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.register_user, name='register'),
+    path('record/<int:primary_key>', views.customer_record, name='record'),
 ]

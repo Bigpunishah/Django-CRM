@@ -1,0 +1,45 @@
+<!-- Create a block so it can be used in the base.html file -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Center the div -->
+<!-- ! <div class="col-md-6 offset-md-3"> -->
+
+    <div class="card">
+        <h4 class="card-header">
+            {{ customer_record.first_name }} 
+            {{ customer_record.last_name }}</h4>
+        <div class="card-body">
+          <h5 class="card-title">Customer Record</h5>
+          <p class="card-text">
+
+            <strong>Email: </strong>{{ customer_record.email }}
+            <br>
+
+            <strong>Address: </strong>{{ customer_record.address }}
+            <br>
+
+            <strong>City: </strong>{{ customer_record.city }}
+            <br>
+
+            <strong>State: </strong>{{ customer_record.state }}
+            <br>
+
+            <strong>Zip: </strong>{{ customer_record.zipcode }}
+            <br>
+
+            <strong>Created: </strong>{{ customer_record.created_at }}
+
+          </p>
+          <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+          <a href="#" class="btn btn-primary">Edit</a>
+          <a href="#" class="btn btn-primary">Delete</a>
+          <!-- pick up 1:56:00 -->
+        </div>
+      </div>
+    <br>
+    
+
+
+    {% endblock %}

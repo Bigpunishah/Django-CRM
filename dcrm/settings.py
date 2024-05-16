@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'dcrm.wsgi.application'
 #Run `python manage.py migrate` to add all necessary files to db
 #then create super user
 #`python manage.py createsuperuser` name: admin psswd: admin (Whatever you want super user to be)
+# ! Current super user admin admin
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', #Change to appropriate DB 
