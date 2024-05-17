@@ -1,0 +1,23 @@
+<!-- Create a block so it can be used in the base.html file -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+    <h1>Add Record</h1>
+
+    <form method="POST">
+        {% csrf_token %} <!--Added so hackers dont get in-->
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-secondary">Save</button>
+    </form>
+
+
+</div>
+
+
+    
+
+{% endblock %}
